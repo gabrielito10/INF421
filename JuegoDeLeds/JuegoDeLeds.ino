@@ -9,7 +9,7 @@ void loop() {
   {
     digitalWrite(i,HIGH);
     delay(50);
-    digitalWrite(iLOW);
+    digitalWrite(i,LOW);
     delay(50);
   }
   for (int i=8 ; i>=3 ; i--)
