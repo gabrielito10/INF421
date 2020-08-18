@@ -11,16 +11,16 @@ void loop() {
     if ( digitalRead(12) == HIGH )
     {
       contador--;
-      DibujarNumero(contador);
       if ( contador < 0)
         contador=3;
+      DibujarNumero(contador);
     }
     if ( digitalRead(11) == HIGH )
     {
       contador++;
-      DibujarNumero(contador);
       if ( contador > 3 )
         contador=0;
+      DibujarNumero(contador);
     }
 }
 //crando la funcion para dibujar los numeros
@@ -68,5 +68,6 @@ void DibujarNumero(int valor)
       digitalWrite(3,LOW);
       digitalWrite(2,HIGH);
       break;  
-  }    
+  }  
+  delay(500);  
 }
