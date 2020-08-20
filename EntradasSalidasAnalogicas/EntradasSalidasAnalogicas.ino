@@ -1,16 +1,13 @@
 void setup() {
   pinMode(11,OUTPUT);
+  pinMode(A0,INPUT); //NO ES NECESARIO
 }
 
 void loop() {
-   for ( int i=0 ; i<=255 ; i++)
-   {
-      analogWrite(11,i);
-      delay(20);
-   }
-  /* for ( int i=254 ; i>=1 ; i--)
-   {
-      analogWrite(11,i);
-      delay(20);
-   }*/
+   int valorAnalogico = analogRead(A0);
+   int nuevoValor = (valorAnalogico * 255)/1023; //conversion de 1023 a 255
+   //conversion a traves del comando map
+   //map(valor a convertir,MinEntrada,MaxEntrada,MinSalida,MaxSalida);
+   int NuevoValorMAP = map(valorAnalogico,0,1023,0,255);
+   analogWrite(11,nuevoValor);
 }
