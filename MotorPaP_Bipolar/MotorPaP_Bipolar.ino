@@ -1,5 +1,5 @@
-const int dirPin = 8;
-const int stepPin = 9;
+const int dirPin = 5;
+const int stepPin = 2;
  
 const int steps = 200;
 int stepDelay;
@@ -16,7 +16,7 @@ void loop() {
    digitalWrite(dirPin, HIGH);
    stepDelay = 1000;
    // Giramos 200 pulsos para hacer una vuelta completa
-   for (int x = 0; x < steps * 2; x++) {
+   for (int x = 0; x < steps*2; x++) {
       digitalWrite(stepPin, HIGH);
       delayMicroseconds(stepDelay);
       digitalWrite(stepPin, LOW);
@@ -28,7 +28,7 @@ void loop() {
    digitalWrite(dirPin, LOW);
    stepDelay = 1000;
    // Giramos 400 pulsos para hacer dos vueltas completas
-   for (int x = 0; x < 400; x++) {
+   for (int x = 0; x < 200*3; x++) {
       digitalWrite(stepPin, HIGH);
       delayMicroseconds(stepDelay);
       digitalWrite(stepPin, LOW);
