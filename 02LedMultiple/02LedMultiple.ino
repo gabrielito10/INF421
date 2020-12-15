@@ -12,7 +12,7 @@ void setup() {
 }
 
 void loop() {
-  digitalWrite(2,HIGH);
+  /*digitalWrite(2,HIGH);
   digitalWrite(3,HIGH);
   digitalWrite(4,HIGH);
   digitalWrite(5,HIGH);
@@ -29,5 +29,19 @@ void loop() {
   digitalWrite(7,HIGH);
   digitalWrite(8,HIGH);
   digitalWrite(9,HIGH);
-  delay(1000);
+  delay(1000);*/
+  for (int i=2 ; i<=9 ; i++)
+  {
+    digitalWrite(i,HIGH);
+    delay(50);
+    digitalWrite(i,LOW);
+    delay(50);
+  }
+  for (int i=8 ; i>=3 ; i--)
+  {
+    digitalWrite(i,HIGH);
+    delay(50);
+    digitalWrite(i,LOW);
+    delay(50);
+  }
 }
