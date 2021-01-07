@@ -1,4 +1,4 @@
-String mensajeLeido="";
+String readString ;
 void setup() {
   Serial.begin(9600);
   pinMode(2,OUTPUT);
@@ -6,11 +6,16 @@ void setup() {
 
 void loop() {
   LeerMensaje();
-  if ( mensajeLeido == "ON_RED" )
+  delay(50);
+  if ( readString == "ON_RED" )
+  {
     digitalWrite(2,HIGH);
-  if ( mensajeLeido == "OFF_RED" )
-    digitalWrite(2,LOW);  
-  mensajeLeido = "";
+  }
+  if ( readString == "OFF_RED" )
+  {
+    digitalWrite(2,LOW);
+  }  
+  readString = "";
 }
 
 // FUNCION PARA LEER UNA CADENA CARCATER POR CARACTER
@@ -21,7 +26,8 @@ void LeerMensaje()
     if ( Serial.available() )
     {
       char caracterLeido = Serial.read();
-      mensajeLeido += caracterLeido;
+      if ( caracterLeido != '\n' )
+        readString += caracterLeido;
     }
   }
 }
