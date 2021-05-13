@@ -7,9 +7,9 @@ void loop() {
   for (  int i=2 ; i <=9 ; i++)
   {
     digitalWrite(i,HIGH);
-    delay(100);
+    delay(20);
     digitalWrite(i,LOW);
-    delay(100);
+    delay(20);
   }
   for (  int i=8 ; i >=3 ; i--)
   {
