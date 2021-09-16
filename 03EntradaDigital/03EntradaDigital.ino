@@ -5,36 +5,23 @@ void setup() {
 }
 
 void loop() {
-  if ( digitalRead(10) == HIGH )
-  {
-    digitalWrite(2,HIGH);
-    digitalWrite(3,HIGH);  
-  }
-  else
-  {
-    digitalWrite(2,LOW);
-    digitalWrite(3,LOW);
-  }
+  digitalWrite(2,HIGH);
+  digitalWrite(3,HIGH);
+  /*digitalWrite(4,HIGH);
+  digitalWrite(5,HIGH);
+  digitalWrite(6,HIGH);
+  digitalWrite(7,HIGH);
+  digitalWrite(8,HIGH);
+  digitalWrite(9,HIGH);*/
 
-  if ( digitalRead(11) == HIGH )
-  {
-    digitalWrite(4,HIGH);
-    digitalWrite(5,HIGH);  
-  }
-  else
-  {
-    digitalWrite(4,LOW);
-    digitalWrite(5,LOW);
-  }
-
-  if ( digitalRead(12) == HIGH )
-  {
-    digitalWrite(6,HIGH);
-    digitalWrite(7,HIGH);  
-  }
-  else
-  {
-    digitalWrite(6,LOW);
-    digitalWrite(7,LOW);
-  }
+  delay(1000);
+  digitalWrite(9,LOW);
+  digitalWrite(8,LOW);
+  digitalWrite(7,LOW);
+  digitalWrite(6,LOW);
+  digitalWrite(5,LOW);
+  digitalWrite(4,LOW);
+  digitalWrite(3,LOW);
+  digitalWrite(2,LOW);
+  delay(1000);
 }
