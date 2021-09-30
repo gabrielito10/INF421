@@ -6,9 +6,11 @@ void setup() {
 }
 
 void loop() {
-  miLCD.setCursor(3,0);//columna,fila
-  miLCD.print("INGENIERIA");
-  miLCD.setCursor(i,1);
-  miLCD.print("INFORMATICA");
+  miLCD.clear();
+  int valorLeido = analogRead(A0);
+  miLCD.setCursor(3,0);
+  miLCD.print("Valor leido:");
+  miLCD.setCursor(6,1);
+  miLCD.print(valorLeido);
   delay(200);
 }
