@@ -14,6 +14,6 @@ void loop() {
   if (digitalRead(11) == HIGH)
     miServito.write(90);
   if (digitalRead(10) == HIGH)
-    miServito.write(180);
+    miServito.write(179);
   delay(200);
 }
