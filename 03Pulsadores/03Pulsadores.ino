@@ -1,4 +1,3 @@
-int pausa=50;
 void setup() {
   //Colocando los pines de 2-9 como salida
   for (int i=2 ; i<=9 ; i++)
@@ -11,21 +10,15 @@ void setup() {
 }
 
 void loop() {
-  //Animando de izq a der
-  for (int i=2 ; i<=9 ; i++)
+  //Verificando Pulsador pin 10
+  if ( digitalRead(10) == HIGH )
   {
-    digitalWrite(i,HIGH);
-    delay(pausa);
-    digitalWrite(i,LOW);
-    delay(pausa);
+    digitalWrite(2,LOW);
+    digitalWrite(3,LOW);  
   }
-
-  //Animando de der o izq
-  for ( int i=8 ; i>=3 ; i--)
+  else
   {
-    digitalWrite(i,HIGH);
-    delay(pausa);
-    digitalWrite(i,LOW);
-    delay(pausa);
+    digitalWrite(2,HIGH);
+    digitalWrite(3,HIGH);  
   }
 }
