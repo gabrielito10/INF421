@@ -11,5 +11,10 @@ void setup() {
 
 void loop() {
   for (int i=2 ; i<=9 ; i++)
+  {
     digitalWrite(i,HIGH);
+    delay(100);
+    digitalWrite(i,LOW);
+    delay(100);
+  }
 }
