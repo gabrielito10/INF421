@@ -1,3 +1,4 @@
+int pausa=50;
 void setup() {
   //Colocando los pines de 2-9 como salida
   for (int i=2 ; i<=9 ; i++)
@@ -13,8 +14,8 @@ void loop() {
   for (int i=2 ; i<=9 ; i++)
   {
     digitalWrite(i,HIGH);
-    delay(100);
+    delay(pausa);
     digitalWrite(i,LOW);
-    delay(100);
+    delay(pausa);
   }
 }
