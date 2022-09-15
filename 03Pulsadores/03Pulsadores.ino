@@ -11,14 +11,14 @@ void setup() {
 
 void loop() {
   //Verificando Pulsador pin 10
-  if ( digitalRead(10) == HIGH )
-  {
-    digitalWrite(2,LOW);
-    digitalWrite(3,LOW);  
-  }
-  else
+  if ( digitalRead(10) == LOW )
   {
     digitalWrite(2,HIGH);
     digitalWrite(3,HIGH);  
+  }
+  else
+  {
+    digitalWrite(2,LOW);
+    digitalWrite(3,LOW);  
   }
 }
