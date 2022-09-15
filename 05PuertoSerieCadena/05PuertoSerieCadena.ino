@@ -7,33 +7,22 @@ void setup() {
 }
 
 void loop() {
-  if (Serial.available())
+  while ( Serial.available() > 0)
   {
-    char charRecibido = Serial.read();
-    if ( charRecibido == 'r' || charRecibido == 'R')
+    //Recibiendo la cadena
+    String cadenaRecibida = Serial.readStringUntil("\n");
+    //Elimando el ultimo caracter
+    cadenaRecibida = cadenaRecibida.substring(0,cadenaRecibida.length() - 1);
+
+    if ( cadenaRecibida == "ledOn" )
     {
-      digitalWrite(2,HIGH);
-      digitalWrite(3,HIGH);
+       for ( int i=2 ; i<=9 ; i++)
+          digitalWrite(i,HIGH);
     }
-    if ( charRecibido == 'a' || charRecibido == 'A')
+    if ( cadenaRecibida == "ledOff" )
     {
-      digitalWrite(4,HIGH);
-      digitalWrite(5,HIGH);
-    }
-    if ( charRecibido == 'v' || charRecibido == 'V')
-    {
-      digitalWrite(6,HIGH);
-      digitalWrite(7,HIGH);
-    }
-    if ( charRecibido == 'z' || charRecibido == 'Z')
-    {
-      digitalWrite(8,HIGH);
-      digitalWrite(9,HIGH);
-    }
-    if ( charRecibido == 'b' || charRecibido == 'B')
-    {
-      for(int i=2 ; i<=9 ; i++)
-        digitalWrite(i,LOW);
+       for ( int i=2 ; i<=9 ; i++)
+          digitalWrite(i,LOW);
     }
   }
 }
