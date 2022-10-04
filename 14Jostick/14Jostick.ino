@@ -9,9 +9,9 @@ void loop() {
     Serial.println("CENTRO");
   else
   {
-    if ( x<50)
+    if ( x<50 )
       Serial.println("IZQUIERDA");
-    if ( x>950)
+    if ( x>950 )
       Serial.println("DERECHA");
     if ( y<50)
       Serial.println("ABAJO");
